@@ -1,0 +1,1785 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow: hidden;
+  width: 100vw;
+  min-width: 100vw;
+  min-height: 100vh;
+
+}
+
+/* Navbar Position  */
+nav {
+  height: 80px;
+  background: #ffffff;
+  box-shadow: 0px 0px 20.4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+label.logo {
+  padding: 0 4vw;
+}
+.logo img {
+  width: 10vw;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 30px;
+}
+nav ul li a {
+  display: flex;
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: inter;
+  /* padding: 7px 13px; */
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.act,
+a:hover {
+  color: #7500ff;
+  transition: 0.5s;
+}
+/* Navbar Button Book A Demo */
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: ghostwhite;
+  overflow: hidden;
+}
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
+}
+.checkbtn {
+  font-size: 30px;
+  color: #7500ff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+/* navbar responsive */
+#check {
+  display: none;
+}
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  .logo img {
+    width: 20vh;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+  nav {
+    height: 9vh;
+  }
+}
+@media (max-width: 1055px) {
+  .logo img {
+    width: 25vh;
+  }
+  .checkbtn {
+    display: block;
+  }
+  nav ul {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    background: #1c0149;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 2;
+    padding: 0px 20px;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+    color: #ffffff;
+    padding: 0px 20px;
+  }
+  a:hover,
+  a.active {
+    background-color: none;
+    color: rgb(152, 137, 218);
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
+@media (max-width: 588px) {
+  .logo img {
+    float: left;
+    margin-top: 10px;
+    width: 5em;
+    height: 2.1em;
+  }
+}
+
+/* copper text  */
+.CopperText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 4vw;
+}
+.CopperText h1 {
+  font-family: "Josefin Sans", sans-serif;
+  color: rgb(0, 0, 0);
+  background-color: #8c00ff;
+  color: transparent;
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.548);
+  -webkit-background-clip: text;
+  font-size: 2.5vw;
+  text-transform: uppercase;
+}
+/* Plan Selector Css*/
+.planSelector {
+  width: 100vw;
+  height: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PlansDiv {
+  width: 90vw;
+  display: flex;
+  justify-content: space-around;
+}
+.PlansDiv a {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: inter;
+  font-weight: 600;
+  font-size: 1.5vw;
+  text-decoration: none;
+  position: relative;
+}
+.Copper a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  height: 3px;
+  width: 0%;
+  background-color: #6200ff;
+  position: absolute;
+  left: -0.5vw;
+  bottom: -10px;
+  transition: 1s;
+}
+.Copper::after {
+  content: "";
+  height: 3px;
+  width: 12.5vw;
+  background-color: #6200ff;
+  position: absolute;
+  left: -0.5vw;
+  bottom: -10px;
+  transition: 1s;
+}
+.Copper:hover::after {
+  width: 12.5vw;
+}
+.Ftth a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+.Ftth::after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background-color: #6200ff;
+  position: absolute;
+  left: -1vw;
+  bottom: -10px;
+  transition: 1s;
+}
+.Ftth:hover::after {
+  width: 11.5vw;
+}
+.slider {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* padding: 50px 0; */
+  height: 78.2vh;
+  /* z-index: 1; */
+  transition: 1s;
+}
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  height:90%;
+}
+.palndiv {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+.plan_Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 35vw;
+}
+
+.item {
+  width: 20%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 8px 3px 25px rgba(0, 0, 0, 0.48);
+  border: 2px solid rgba(0, 0, 0, 0.096);
+  position: absolute;
+  text-align: justify;
+  background-color: #f9f9f9;
+  border-radius: 1vw;
+  transition: 0.5s;
+}
+#next,
+#prev {
+  background-color: white;
+  border: none;
+  z-index: 1;
+  font-size: 3vw;
+  font-family: monospace;
+  color: rgb(130, 0, 252);
+  cursor: pointer;
+}
+
+/* circul animaiton CSS */
+
+@keyframes progress {
+  0% {
+    --percentage: 0;
+  }
+  100% {
+    --percentage: var(--value);
+  }
+}
+
+@property --percentage {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: var(--value);
+  --primary: rgba(108, 24, 206, 1);
+  --secondary: rgba(217, 217, 217, 1);
+  --size: 20vw;
+
+  animation: progress 1s 0.1s forwards;
+  width: var(--size);
+  /* aspect-ratio: 2 / 1; */
+  border-radius: 50% / 100% 100% 0 0;
+  position: relative;
+  /* border: 2px solid black; */
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    from 0.75turn at 50% 100%,
+    var(--primary) calc(var(--percentage) * 1% / 2),
+    var(--secondary) calc(var(--percentage) * 1% /2 + 0.1%)
+  );
+  mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "Mbps";
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) /15);
+  color: var(--primary);
+}
+
+.range{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  width: 65%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Downlade Uploade  */
+.DownlodeUploade {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size:30px;
+  /* background-color: #48b94e; */
+  /* padding: 1vw 0; */
+}
+.DownlodeUploade .Upload {
+  rotate: 180deg;
+}
+.PlansPrice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+}
+.priceposi {
+  width:60%;
+  text-align: center;
+}
+
+.Time {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.Time .price {
+  width: 55%;
+  font-size: 26px;
+  text-align: left;
+  padding: 0.5vw 0;
+  color: rgba(92, 31, 163, 1);
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+.Time .month {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  font-size: 19px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+.button {
+  width: 100%;
+  height: 15%;
+  padding: 0.5vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button button {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    rgba(107, 23, 205, 1),
+    rgba(34, 12, 61, 1)
+  );
+  box-shadow: none;
+  border: none;
+  padding: 0.5vw;
+  width: 70%;
+  height: 70%;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: "Inter", sans-serif;
+  border-radius: 20px;
+}
+.button button:hover {
+  transition: 0.5s ease-in-out;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+}
+.border {
+  /* width: 16vw; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5vw 0;
+}
+.border hr {
+  width: 80%;
+}
+/* PLAN DETAILS POP UP CSS */
+.PlanDetailsPopUp {
+position: relative;
+width: 100%;
+height: 35vw;
+/* background-color: #4a00e0; */
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+display: none;
+/* transition: 1s; */
+z-index: 0;
+}
+
+.PlanDetailsPopUp .PopUp {
+display: none;
+width: 60%;
+height: 30vw;
+transition: 5s ease-out;
+position: absolute;
+border-radius: 1vw;
+background-color: #ffffff;
+box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.288);
+}
+.AboutPlan {
+color: rgb(0, 0, 0);
+text-align: center;
+padding-top: 2vw;
+padding-bottom: 1vw;
+font-size: 40px;
+font-family: inter;
+text-decoration: 0.2vw underline solid rgb(120, 2, 255);
+}
+.AboutText {
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+/* padding-right: 2vw; */
+width: 100%;
+/* background-color: #8e2de2; */
+}
+.AboutContent {
+/* background-color: #4a00e0; */
+width: 30%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.AboutContent img {
+width: 15vw;
+}
+.AboutContentText {
+width: 60%;
+display: flex;
+justify-content: center;
+align-items: center;
+/* background-color: aqua; */
+}
+.AboutContentText ul {
+font-size: 1.2vw;
+font-family: inter;
+text-transform: capitalize;
+}
+.AboutContentText ul li {
+padding: 0.01vw 0;
+}
+.AboutContentText .close {
+padding: 0.5vw;
+border-radius: 1vw;
+border: 0;
+background-color: #4a00e0;
+color: #fff;
+cursor: pointer;
+}
+.returntoplan {
+padding: 2vw 0;
+}
+
+.return {
+display: flex;
+position: absolute;
+right: 0;
+padding: 1vw;
+color: red;
+cursor: pointer;
+font-size: 1.5vw;
+transition: 1s;
+}
+.return:hover{
+rotate:180deg;
+}
+
+
+/* plans Details Css  */
+
+/*------------------------- MEDIA QUERY 1920 X 1080 ------------- */
+@media (max-width: 1687px) {
+  /* copper text  */
+  .CopperText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+  }
+  .CopperText h1 {
+    font-family: "Josefin Sans", sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: #8c00ff;
+    color: transparent;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.548);
+    -webkit-background-clip: text;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+  }
+  /* Plan Selector Css*/
+  .planSelector {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .PlansDiv {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .PlansDiv a {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: inter;
+    font-weight: 600;
+    font-size: 2vw;
+    text-decoration: none;
+    position: relative;
+  }
+  .Copper a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -0.5vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Copper::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -0.5vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Copper:hover::after {
+    width: 17vw;
+  }
+  .Ftth a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .Ftth::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -1vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Ftth:hover::after {
+    width: 14.5vw;
+  }
+  /* *******------slider-------************ */
+  .slider {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* padding: 50px 0; */
+    height: 78.2vh;
+    /* z-index: 1; */
+    transition: 1s;
+  }
+  .mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    height:90%;
+  }
+  .palndiv {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+  .plan_Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 35vw;
+  }
+
+  .item {
+    width: 25%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 8px 3px 25px rgba(0, 0, 0, 0.48);
+    border: 2px solid rgba(0, 0, 0, 0.096);
+    position: absolute;
+    text-align: justify;
+    background-color: #f9f9f9;
+    border-radius: 1vw;
+    transition: 0.5s;
+  }
+  #next,
+  #prev {
+    background-color: white;
+    border: none;
+    z-index: 1;
+    font-size: 4vw;
+    font-family: monospace;
+    color: rgb(130, 0, 252);
+    cursor: pointer;
+  }
+
+  /* circul animaiton CSS */
+
+  @keyframes progress {
+    0% {
+      --percentage: 0;
+    }
+    100% {
+      --percentage: var(--value);
+    }
+  }
+
+  @property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  [role="progressbar"] {
+    --percentage: var(--value);
+    --primary: rgba(108, 24, 206, 1);
+    --secondary: rgba(217, 217, 217, 1);
+    --size: 20vw;
+
+    animation: progress 1s 0.1s forwards;
+    width: var(--size);
+    /* aspect-ratio: 2 / 1; */
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    /* border: 2px solid black; */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  [role="progressbar"]::before {
+    content: "";
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 0.75turn at 50% 100%,
+      var(--primary) calc(var(--percentage) * 1% / 2),
+      var(--secondary) calc(var(--percentage) * 1% /2 + 0.1%)
+    );
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+  }
+
+  [role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) "Mbps";
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) /10);
+    color: var(--primary);
+  }
+
+  .range{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circle {
+    width: 75%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Downlade Uploade  */
+  .DownlodeUploade {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:35px;
+    /* background-color: #48b94e; */
+    /* padding: 1vw 0; */
+  }
+  .DownlodeUploade .Upload {
+    rotate: 180deg;
+  }
+  .PlansPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+  }
+  .priceposi {
+    width:60%;
+    text-align: center;
+  }
+
+  .Time {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  .Time .price {
+    width: 55%;
+    font-size: 30px;
+    text-align: left;
+    padding: 0.5vw 0;
+    color: rgba(92, 31, 163, 1);
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
+  .Time .month {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    font-size: 19px;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+  .button {
+    width: 100%;
+    height: 15%;
+    padding: 0.5vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button button {
+    cursor: pointer;
+    background-image: linear-gradient(
+      to right,
+      rgba(107, 23, 205, 1),
+      rgba(34, 12, 61, 1)
+    );
+    box-shadow: none;
+    border: none;
+    padding: 0.5vw;
+    width: 70%;
+    height: 70%;
+    color: #ffffff;
+    font-size: 25px;
+    font-family: "Inter", sans-serif;
+    border-radius: 20px;
+  }
+  .button button:hover {
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+  }
+  .border {
+    /* width: 16vw; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5vw 0;
+  }
+  .border hr {
+    width: 80%;
+  }
+  /* PLAN DETAILS POP UP CSS */
+.PlanDetailsPopUp {
+  position: relative;
+  width: 100%;
+  height: 45vw;
+  /* background-color: #4a00e0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  display: none;
+  /* transition: 1s; */
+  z-index: 0;
+}
+
+.PlanDetailsPopUp .PopUp {
+  display: none;
+  width: 60%;
+  height:40vw;
+  transition: 5s ease-out;
+  position: absolute;
+  border-radius: 1vw;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.288);
+}
+.AboutPlan {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 2vw;
+  padding-bottom: 1vw;
+  font-size: 40px;
+  font-family: inter;
+  text-decoration: 0.2vw underline solid rgb(120, 2, 255);
+}
+.AboutText {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* padding-right: 2vw; */
+  width: 100%;
+  /* background-color: #8e2de2; */
+}
+.AboutContent {
+  /* background-color: #4a00e0; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AboutContent img {
+  width: 15vw;
+}
+.AboutContentText {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.AboutContentText ul {
+  font-size: 1vw;
+  font-weight: 600;
+  line-height: 2.5vw;
+  font-family: inter;
+  text-transform: capitalize;
+}
+.AboutContentText ul li {
+  padding: 0.01vw 0;
+}
+.AboutContentText .close {
+  padding: 0.5vw;
+  border-radius: 1vw;
+  border: 0;
+  background-color: #4a00e0;
+  color: #fff;
+  cursor: pointer;
+}
+.returntoplan {
+  padding: 2vw 0;
+}
+
+.return {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding: 1vw;
+  color: red;
+  cursor: pointer;
+  font-size: 1.5vw;
+  transition: 1s;
+}
+.return:hover{
+  rotate:180deg;
+}
+
+}
+
+
+@media (max-width: 1532px) {
+  /* copper text  */
+  .CopperText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+  }
+  .CopperText h1 {
+    font-family: "Josefin Sans", sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: #8c00ff;
+    color: transparent;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.548);
+    -webkit-background-clip: text;
+    font-size: 3.5vw;
+
+    text-transform: uppercase;
+  }
+  /* Plan Selector Css*/
+  .planSelector {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .PlansDiv {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .PlansDiv a {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: inter;
+    font-weight: 600;
+    /* font-size: 20px; */
+    text-decoration: none;
+    position: relative;
+  }
+  .Copper a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -0.5vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Copper::after {
+    content: "";
+    height: 3px;
+    width: 17vw;
+    background-color: #6200ff;
+    position: absolute;
+    left: -.7vw;
+    bottom: -9px;
+    transition: 1s;
+  }
+  .Copper:hover {
+    width: 17vw;
+  }
+  .Ftth a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .Ftth::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -1vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Ftth:hover::after {
+    width: 14.5vw;
+  }
+  /* *******------slider-------************ */
+  .slider {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* padding: 50px 0; */
+    height: 78.2vh;
+    /* z-index: 1; */
+    transition: 1s;
+  }
+  .mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    height:90%;
+  }
+  .palndiv {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+  .plan_Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 35vw;
+  }
+
+  .item {
+    width: 30%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 8px 3px 25px rgba(0, 0, 0, 0.48);
+    border: 2px solid rgba(0, 0, 0, 0.096);
+    position: absolute;
+    text-align: justify;
+    background-color: #f9f9f9;
+    border-radius: 1vw;
+    transition: 0.5s;
+  }
+  #next,
+  #prev {
+    background-color: white;
+    border: none;
+    z-index: 1;
+    font-size: 4vw;
+    font-family: monospace;
+    color: rgb(130, 0, 252);
+    cursor: pointer;
+  }
+
+  /* circul animaiton CSS */
+
+  @keyframes progress {
+    0% {
+      --percentage: 0;
+    }
+    100% {
+      --percentage: var(--value);
+    }
+  }
+
+  @property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  [role="progressbar"] {
+    --percentage: var(--value);
+    --primary: rgba(108, 24, 206, 1);
+    --secondary: rgba(217, 217, 217, 1);
+    --size: 20vw;
+
+    animation: progress 1s 0.1s forwards;
+    width: var(--size);
+    /* aspect-ratio: 2 / 1; */
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    /* border: 2px solid black; */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  [role="progressbar"]::before {
+    content: "";
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 0.75turn at 50% 100%,
+      var(--primary) calc(var(--percentage) * 1% / 2),
+      var(--secondary) calc(var(--percentage) * 1% /2 + 0.1%)
+    );
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+  }
+
+  [role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) "Mbps";
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) /10);
+    color: var(--primary);
+  }
+
+  .range{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circle {
+    width: 75%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Downlade Uploade  */
+  .DownlodeUploade {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:35px;
+    /* background-color: #48b94e; */
+    /* padding: 1vw 0; */
+  }
+  .DownlodeUploade .Upload {
+    rotate: 180deg;
+  }
+  .PlansPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+  }
+  .priceposi {
+    width:60%;
+    text-align: center;
+  }
+
+  .Time {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  .Time .price {
+    width: 55%;
+    font-size: 30px;
+    text-align: left;
+    padding: 0.5vw 0;
+    color: rgba(92, 31, 163, 1);
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
+  .Time .month {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    font-size: 19px;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+  .button {
+    width: 100%;
+    height: 15%;
+    padding: 0.5vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button button {
+    cursor: pointer;
+    background-image: linear-gradient(
+      to right,
+      rgba(107, 23, 205, 1),
+      rgba(34, 12, 61, 1)
+    );
+    box-shadow: none;
+    border: none;
+    padding: 0.5vw;
+    width: 70%;
+    height: 70%;
+    color: #ffffff;
+    font-size: 25px;
+    font-family: "Inter", sans-serif;
+    border-radius: 20px;
+  }
+  .button button:hover {
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+  }
+  .border {
+    /* width: 16vw; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5vw 0;
+  }
+  .border hr {
+    width: 80%;
+  }
+  /* PLAN DETAILS POP UP CSS */
+.PlanDetailsPopUp {
+  position: relative;
+  width: 100%;
+  height: 35vw;
+  /* background-color: #4a00e0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  display: none;
+  /* transition: 1s; */
+  z-index: 0;
+}
+
+.PlanDetailsPopUp .PopUp {
+  display: none;
+  width: 60%;
+  height: 30vw;
+  transition: 5s ease-out;
+  position: absolute;
+  border-radius: 1vw;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.288);
+}
+.AboutPlan {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 2vw;
+  padding-bottom: 1vw;
+  font-size: 40px;
+  font-family: inter;
+  text-decoration: 0.2vw underline solid rgb(120, 2, 255);
+}
+.AboutText {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* padding-right: 2vw; */
+  width: 100%;
+  /* background-color: #8e2de2; */
+}
+.AboutContent {
+  /* background-color: #4a00e0; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AboutContent img {
+  width: 15vw;
+}
+.AboutContentText {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.AboutContentText ul {
+  font-size: 1.2vw;
+  font-family: inter;
+  text-transform: capitalize;
+}
+.AboutContentText ul li {
+  padding: 0.01vw 0;
+}
+.AboutContentText .close {
+  padding: 0.5vw;
+  border-radius: 1vw;
+  border: 0;
+  background-color: #4a00e0;
+  color: #fff;
+  cursor: pointer;
+}
+.returntoplan {
+  padding: 2vw 0;
+}
+
+.return {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding: 1vw;
+  color: red;
+  cursor: pointer;
+  font-size: 1.5vw;
+  transition: 1s;
+}
+.return:hover{
+  rotate:180deg;
+}
+
+}
+
+@media (max-width: 900px) {
+  /* copper text  */
+  .CopperText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15vw;
+  }
+  .CopperText h1 {
+    font-family: "Josefin Sans", sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: #8c00ff;
+    color: transparent;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.548);
+    -webkit-background-clip: text;
+    font-size: 5vw;
+    text-transform: uppercase;
+  }
+  /* Plan Selector Css*/
+  .planSelector {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .PlansDiv {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .PlansDiv a {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: inter;
+    font-weight: 600;
+    font-size: 3.5vw;
+    text-decoration: none;
+    position: relative;
+  }
+  .Copper a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -0.5vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Copper::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -0.5vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Copper:hover::after {
+    width: 17vw;
+  }
+  .Ftth a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .Ftth::after {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: #6200ff;
+    position: absolute;
+    left: -1vw;
+    bottom: -10px;
+    transition: 1s;
+  }
+  .Ftth:hover::after {
+    width: 14.5vw;
+  }
+  /* *******------slider-------************ */
+  .slider {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* padding: 50px 0; */
+    height: 78.2vh;
+    /* z-index: 1; */
+    transition: 1s;
+  }
+  .mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    height:90%;
+  }
+  .palndiv {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+  .plan_Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 35vw;
+  }
+
+  .item {
+    width: 60%;
+    height:50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 8px 3px 25px rgba(0, 0, 0, 0.48);
+    border: 2px solid rgba(0, 0, 0, 0.096);
+    position: absolute;
+    text-align: justify;
+    background-color: #f9f9f9;
+    border-radius: 1vw;
+    transition: 0.5s;
+  }
+  #next,
+  #prev {
+    background-color: white;
+    border: none;
+    z-index: 1;
+    font-size: 5vw;
+    font-family: monospace;
+    color: rgb(130, 0, 252);
+    cursor: pointer;
+  }
+
+  /* circul animaiton CSS */
+
+  @keyframes progress {
+    0% {
+      --percentage: 0;
+    }
+    100% {
+      --percentage: var(--value);
+    }
+  }
+
+  @property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  [role="progressbar"] {
+    --percentage: var(--value);
+    --primary: rgba(108, 24, 206, 1);
+    --secondary: rgba(217, 217, 217, 1);
+    --size: 40vw;
+
+    animation: progress 1s 0.1s forwards;
+    width: var(--size);
+    /* aspect-ratio: 2 / 1; */
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    /* border: 2px solid black; */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  [role="progressbar"]::before {
+    content: "";
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 0.75turn at 50% 100%,
+      var(--primary) calc(var(--percentage) * 1% / 2),
+      var(--secondary) calc(var(--percentage) * 1% /2 + 0.1%)
+    );
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+  }
+
+  [role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) "Mbps";
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) /10);
+    color: var(--primary);
+  }
+
+  .range{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circle {
+    width: 85%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Downlade Uploade  */
+  .DownlodeUploade {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:15px;
+    /* background-color: #48b94e; */
+    /* padding: 1vw 0; */
+  }
+  .DownlodeUploade .Upload {
+    rotate: 180deg;
+  }
+  .PlansPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+  }
+  .priceposi {
+    width:70%;
+    text-align: center;
+  }
+
+  .Time {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  .Time .price {
+    width: 55%;
+    font-size: 4.5vw;
+    text-align: left;
+    padding: 0.5vw 0;
+    color: rgba(92, 31, 163, 1);
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+  }
+  .Time .month {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    font-size: 2vw;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+  .button {
+    width: 100%;
+    height: 15%;
+    padding: 0.5vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button button {
+    cursor: pointer;
+    background-image: linear-gradient(
+      to right,
+      rgba(107, 23, 205, 1),
+      rgba(34, 12, 61, 1)
+    );
+    box-shadow: none;
+    border: none;
+    padding: 0.5vw;
+    width: 90%;
+    height: 70%;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    border-radius: 20px;
+  }
+  .button button:hover {
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+  }
+  .border {
+    /* width: 16vw; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5vw 0;
+  }
+  .border hr {
+    width: 80%;
+  }
+  /* PLAN DETAILS POP UP CSS */
+.PlanDetailsPopUp {
+  position: relative;
+  width: 100%;
+  height: 120vw;
+  /* background-color: #4a00e0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  display: none;
+  /* transition: 1s; */
+  z-index: 0;
+}
+
+.PlanDetailsPopUp .PopUp {
+  display: none;
+  width: 80%;
+  height:100vw;
+  transition: 5s ease-out;
+  position: absolute;
+  border-radius: 1vw;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.288);
+}
+.AboutPlan {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 2vw;
+  padding-bottom: 1vw;
+  font-size: 20px;
+  font-family: inter;
+  text-decoration: 0.2vw underline solid rgb(120, 2, 255);
+}
+.AboutText {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+
+  /* padding-right: 2vw; */
+  width: 100%;
+  /* background-color: #8e2de2; */
+}
+.AboutContent {
+  display: none;
+  /* background-color: #4a00e0; */
+}
+.AboutContent img {
+  display: none;
+  
+}
+
+.AboutContentText {
+  padding:  0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.AboutContentText ul {
+  font-size: 3vw;
+  font-family: inter;
+  text-transform: capitalize;
+}
+.AboutContentText ul li {
+  padding: 1vw 0;
+}
+.AboutContentText .close {
+  padding: 0.5vw;
+  border-radius: 1vw;
+  border: 0;
+  background-color: #4a00e0;
+  color: #fff;
+  cursor: pointer;
+}
+.returntoplan {
+  padding: 2vw 0;
+}
+
+.return {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding: 1vw;
+  color: red;
+  cursor: pointer;
+  font-size:4vw;
+  /* transition: 1s; */
+}
+.return:hover{
+  rotate:180deg;
+}
+
+}

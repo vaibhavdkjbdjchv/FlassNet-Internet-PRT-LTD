@@ -1,0 +1,201 @@
+.custom-slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 35vw;
+    z-index: 1;
+    transition: 1s;
+  }
+  
+  .custom-mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17vw;
+    height: 25vw;
+  }
+  
+  .custom-plan_Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 25vw;
+  }
+  
+  .custom-Shadow {
+    background-color: aqua;
+  }
+  
+  .custom-item {
+    box-shadow: 8px 3px 25px rgba(0, 0, 0, 0.48);
+    border: 2px solid rgba(0, 0, 0, 0.096);
+    position: absolute;
+    text-align: justify;
+    background-color: #fff;
+    border-radius: 1vw;
+    transition: 0.5s;
+  }
+  
+  #custom-next,
+  #custom-prev {
+    background-color: white;
+    border: none;
+    z-index: 1;
+    font-size: 2vw;
+    font-family: monospace;
+    color: rgb(130, 0, 252);
+    cursor: pointer;
+  }
+  
+  /* circular animation CSS */
+  
+  @keyframes progress {
+    0% {
+      --percentage: 0;
+    }
+    100% {
+      --percentage: var(--value);
+    }
+  }
+  
+  @property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  [role="progressbar"] {
+    --percentage: var(--value);
+    --primary: rgba(108, 24, 206, 1);
+    --secondary: rgba(217, 217, 217, 1);
+    --size: 9vw;
+    animation: progress 1s 0.1s forwards;
+    width: var(--size);
+    aspect-ratio: 2 / 1;
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  [role="progressbar"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 0.75turn at 50% 100%,
+      var(--primary) calc(var(--percentage) * 1% / 2),
+      var(--secondary) calc(var(--percentage) * 1% / 2 + 0.1%)
+    );
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+  }
+  
+  [role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) "Mbps";
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 8);
+    color: var(--primary);
+  }
+  
+  .custom-circle {
+    width: 16vw;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Download Upload */
+  .custom-DownlodeUploade {
+    width: 16vw;
+    height: 2vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2vw;
+  }
+  
+  .custom-DownlodeUploade .Upload {
+    rotate: 180deg;
+  }
+  
+  .custom-Time {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    color: #fff;
+  }
+  
+  .custom-Time .price {
+    font-size: 1.3vw;
+    padding: 0.5vw 0;
+    color: rgba(92, 31, 163, 1);
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .custom-Time .month {
+    display: flex;
+    align-items: center;
+    font-size: 0.8vw;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    padding: 0 1vw;
+  }
+  
+  .custom-button {
+    width: 16vw;
+    height: 3vw;
+    padding: 0.5vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-button button {
+    cursor: pointer;
+    background-image: linear-gradient(
+      to right,
+      rgba(107, 23, 205, 1),
+      rgba(34, 12, 61, 1)
+    );
+    box-shadow: none;
+    border: none;
+    padding: 0.5vw;
+    width: 13vw;
+    color: #ffffff;
+    font-size: 1vw;
+    font-family: "Inter", sans-serif;
+    border-radius: 20px;
+  }
+  
+  .custom-button button:hover {
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+  }
+  
+  .custom-border {
+    width: 16vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5vw 0;
+  }
+  
+  .custom-border hr {
+    width: 14vw;
+  }
+  

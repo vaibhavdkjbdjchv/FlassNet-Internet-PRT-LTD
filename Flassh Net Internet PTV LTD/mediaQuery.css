@@ -1,0 +1,299 @@
+.slider {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 35vw;
+    z-index: 1;
+    transition: 1s;
+  }
+  .mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17vw;
+    height: 25vw;
+  }
+  
+  .plan_Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 25vw;
+  }
+  .Shadow {
+    background-color: aqua;
+  }
+  .item {
+    box-shadow: 8px 3px 25px rgba(0, 0, 0, 0.48);
+    border: 2px solid rgba(0, 0, 0, 0.096);
+    position: absolute;
+    text-align: justify;
+    background-color: #fff;
+    border-radius: 1vw;
+    transition: 0.5s;
+  }
+  #next,
+  #prev {
+    background-color: white;
+    border: none;
+    z-index: 1;
+  
+    font-size: 2vw;
+    font-family: monospace;
+    color: rgb(130, 0, 252);
+    cursor: pointer;
+  }
+  
+  /* circul animaiton CSS */
+  
+  @keyframes progress {
+    0% {
+      --percentage: 0;
+    }
+    100% {
+      --percentage: var(--value);
+    }
+  }
+  
+  @property --percentage {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  [role="progressbar"] {
+    --percentage: var(--value);
+    --primary: rgba(108, 24, 206, 1);
+    --secondary: rgba(217, 217, 217, 1);
+    --size: 9vw;
+  
+    animation: progress 1s 0.1s forwards;
+    width: var(--size);
+    aspect-ratio: 2 / 1;
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    /* border: 2px solid black; */
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  [role="progressbar"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 0.75turn at 50% 100%,
+      var(--primary) calc(var(--percentage) * 1% / 2),
+      var(--secondary) calc(var(--percentage) * 1% / 2 + 0.1%)
+    );
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+  }
+  
+  [role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) " Mbps";
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 8);
+    color: var(--primary);
+    font-weight: 700;
+  }
+  
+  .circle {
+    width: 20vw;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Downlade Uploade  */
+  .DownlodeUploade {
+    width: 20vw;
+    height: 3vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2vw;
+    /* background-color: #48b94e; */
+    /* padding: 1vw 0; */
+  }
+  .DownlodeUploade .Upload {
+    rotate: 180deg;
+  }
+  .PlansPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* height: 10vw; */
+  }
+  .priceposi {
+    width: 10vw;
+    text-align: right;
+  }
+  
+  .Time {
+    width: 20vw;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    color: #fff;
+  }
+  .Time .price {
+    width: 6vw;
+    font-size: 1.3vw;
+    /* text-align: left; */
+    padding: 0.5vw 0;
+    color: rgba(92, 31, 163, 1);
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+  }
+  .Time .month {
+    display: flex;
+    align-items: center;
+    width: 6vw;
+    font-size: 0.8vw;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+  .button {
+    width: 20vw;
+    height: 3vw;
+    padding: 0.5vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button button {
+    cursor: pointer;
+    background-image: linear-gradient(
+      to right,
+      rgba(107, 23, 205, 1),
+      rgba(34, 12, 61, 1)
+    );
+    box-shadow: none;
+    border: none;
+    padding: 0.5vw;
+    width: 13vw;
+    color: #ffffff;
+    font-size: 1vw;
+    font-family: "Inter", sans-serif;
+    border-radius: 20px;
+  }
+  .button button:hover {
+    transition: 0.5s ease-in-out;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
+  }
+  .border {
+    /* width: 16vw; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5vw 0;
+  }
+  .border hr {
+    width: 14vw;
+  }
+  /* PLAN DETAILS POP UP CSS */
+  .PlanDetailsPopUp {
+    position: relative;
+    width: 100vw;
+    height: 35vw;
+    /* background-color: #4a00e0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    display: none;
+    transition: 1s;
+    z-index: 0;
+  }
+  
+  .PlanDetailsPopUp .PopUp {
+    display: none;
+    width: 50vw;
+    height: 25vw;
+    transition: 5s ease-out;
+    position: absolute;
+    border-radius: 1vw;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.288);
+  }
+  .AboutPlan {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 2vw;
+    padding-bottom: 1vw;
+    font-size: 1.5vw;
+    font-family: inter;
+    text-decoration: 0.2vw underline solid rgb(120, 2, 255);
+  }
+  .AboutText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2vw;
+    /* background-color: #8e2de2; */
+  }
+  .AboutContent {
+    /* background-color: #4a00e0; */
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .AboutContent img {
+    width: 13vw;
+  }
+  .AboutContentText {
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+  }
+  .AboutContentText ul {
+    font-size: 0.9vw;
+    font-family: inter;
+    text-transform: capitalize;
+  }
+  .AboutContentText ul li {
+    padding: 0.01vw 0;
+  }
+  .AboutContentText .close {
+    padding: 0.5vw;
+    border-radius: 1vw;
+    border: 0;
+    background-color: #4a00e0;
+    color: #fff;
+    cursor: pointer;
+  }
+  .returntoplan {
+    padding: 2vw 0;
+  }
+  
+  .return {
+    display: flex;
+    position: absolute;
+    right: 0;
+    padding: 1vw;
+    color: red;
+    cursor: pointer;
+    transition: 1s;
+    font-size: 1.3vw;
+  }
+  .return:hover{
+    rotate:180deg;
+  }
+  
